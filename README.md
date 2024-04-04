@@ -6,7 +6,7 @@ This repository contains automated tests for API endpoints using RestAssured and
 
 The project demonstrates how to perform automated testing on API endpoints using RestAssured, a Java library for API testing, and JUnit, a testing framework for Java.
 
-## Prerequisites
+## Pre requisites
 
 Make sure you have the following installed on your system:
 
