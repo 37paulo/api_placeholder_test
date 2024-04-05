@@ -1,6 +1,7 @@
 package api_tests;
 
 import io.restassured.http.ContentType;
+import org.junit.Before;
 import org.junit.Test;
 import static io.restassured.RestAssured.*;
 import static   io.restassured.matcher.RestAssuredMatchers.*;
@@ -9,10 +10,14 @@ import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.given;
 
 public class apiTests {
+    @Before
+    public void setUp(){
+        baseURI = "https://jsonplaceholder.typicode.com/";
+    }
 
     @Test
     public void getWithSucess(){
-        baseURI = "https://jsonplaceholder.typicode.com/";
+
         given()
             .contentType(ContentType.JSON)
             .when()
@@ -26,7 +31,7 @@ public class apiTests {
 
     @Test
     public void postWithSucess(){
-        baseURI = "https://jsonplaceholder.typicode.com/";
+
         given()
                 .contentType(ContentType.JSON)
                 .body("{ \n" +
@@ -44,7 +49,7 @@ public class apiTests {
 
     @Test
     public void putSuccessful(){
-        baseURI = "https://jsonplaceholder.typicode.com/";
+
         given()
                 .contentType(ContentType.JSON)
                 .body("{   \n" +
@@ -62,7 +67,7 @@ public class apiTests {
 
     @Test
     public void deleteSuccessful(){
-        baseURI = "https://jsonplaceholder.typicode.com/";
+
         given()
                 .contentType(ContentType.JSON)
         .when()
